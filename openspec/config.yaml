@@ -1,0 +1,77 @@
+# OpenSpec Configuration
+# This file defines the context and rules for your project specs.
+
+schema: spec-driven
+
+context: |
+  Project: Garage Door Control System
+  Goal: Android Auto-compatible app that connects via BLE to an ESPHome device.
+
+  Architectures:
+  - Android app (Language: Kotlin, minSdkVersion: 21)
+  - Android Auto compatible with Xiaomi MiUI 14.
+  - Android app uses BLE to communicate with ESPHome device for garage door operations.
+
+  Key Features:
+  - Configure and connect to ESPHome device via BLE.
+  - Open garage door by writing to BLE characteristic 'open_the_door' (write+notify).
+  - Check ESPHome device status by reading BLE characteristic 'repeat_counter_read' (read+notify).
+  - MainActivity:
+    - "Open Door" button to trigger the open operation.
+    - Text area for connection status and BLE info (repeat_counter_read value).
+  - Configuration Activity:
+    - BLE Device Name (Default: "puertagaraje").
+    - BLE Device UUID (Default: "180F").
+    - Characteristics Configuration:
+      - open_the_door: "1801" (write+notify).
+      - repeat_counter_read: "1802" (read+notify).
+  - Android Auto Screen:
+    - Button to trigger open operation.
+    - Text area for status and BLE info.
+  - Technical Constraints:
+    - Use Android Coroutines for BLE operations.
+    - Perform BLE operations in background threads.
+    - Implement retry mechanisms for failures.
+    - Category: androidx.car.app.category.PARKING.
+
+rules:
+  specs:
+    - |
+      BLE Flow:
+      - Scan for ESPHome device by name/service UUID or advertised identifiers.
+      - Connect and discover services.
+      - Obtain characteristics: open_the_door (write+notify) and repeat_counter_read (read+notify).
+      - On "Open Door" button press: Write to open_the_door characteristic.
+      - Monitor repeat_counter_read notifications and update UI.
+      BLE Reconnect Flow:
+      - If the connection drops, the app should automatically attempt to reconnect to the device.
+      - The app should use an exponential backoff strategy for retries (1s, 2s, 4s, 8s) for up to 5 attempts.
+      - Once reconnected, the app should resume monitoring the repeat_counter_read characteristic.
+      - The app should have a button to manually reconnect to the device.
+      - The app should have a button to clear the retry queue.
+    - |
+      Safety and UX:
+      - Throttle commands to avoid rapid successive opens.
+      - Driver-focused UI on Android Auto: single prominent action, no distractions.
+    - |
+      Android Auto:
+      - Use androidx.car.app:app:1.7.0.
+      - CarAppTheme, CarAppSurface, and templates with a minimal "Open Door" control.
+      - Ensure surfaces are non-intrusive and responsive to large screens.
+    - |
+      Permissions and Privacy:
+      - BLUETOOTH, BLUETOOTH_ADMIN.
+      - ACCESS_FINE_LOCATION or Nearby devices permission (OS dependent).
+      - Provide runtime permission rationale.
+    - |
+      Security and Reliability:
+      - Debounce/throttle open commands.
+      - Reconnect with backoff strategy.
+      - Timeouts and user-friendly error messages.
+      - Validate 4-byte little-endian decoding for counter values.
+    - |
+      CI/CD and Deliverables:
+      - GitHub Actions for lint, unit tests, and instrumentation tests.
+      - Gihub repository: git@github.com:luismalddonado/GarageRemoteControl.git
+      - Build, sign, and release workflow for Android Auto.
+      - Deliverables: Runnable Android Studio project, README (setup, pairing, UUIDs), and Car App integration guide.

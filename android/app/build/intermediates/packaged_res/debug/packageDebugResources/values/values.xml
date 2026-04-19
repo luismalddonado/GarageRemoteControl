@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="primary">#0D47A1</color>
+    <color name="secondary">#2E7D32</color>
+    <color name="status_connected">#4CAF50</color>
+    <color name="status_disconnected">#F44336</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Puerta Garaje</string>
+    <string name="btn_reconnect">Reconectar</string>
+    <string name="device_name">Nombre del dispositivo</string>
+    <string name="main_title">Controlador de Garaje</string>
+    <string name="open_char_uuid">UUID caract. abrir</string>
+    <string name="open_door">Abrir Puerta</string>
+    <string name="operations_count">Operaciones pendientes: %d</string>
+    <string name="reset_defaults">Restablecer valores</string>
+    <string name="save_settings">Guardar cambios</string>
+    <string name="service_uuid">UUID del servicio</string>
+    <string name="settings">Configuración</string>
+    <string name="status_char_uuid">UUID caract. estado</string>
+    <string name="status_connected">Conectado</string>
+    <string name="status_connecting">Conectando...</string>
+    <string name="status_disconnected">Desconectado</string>
+    <string name="status_scanning">Escaneando...</string>
+    <style name="Theme.GarageDoor" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorSecondary">@color/secondary</item>
+    </style>
+</resources>

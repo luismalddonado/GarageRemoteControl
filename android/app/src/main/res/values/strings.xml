@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Puerta Garaje</string>
+    <string name="open_door">Abrir Puerta</string>
+    <string name="status_scanning">Escaneando...</string>
+    <string name="status_connecting">Conectando...</string>
+    <string name="status_connected">Conectado</string>
+    <string name="status_disconnected">Desconectado</string>
+    <string name="operations_count">Operaciones pendientes: %d</string>
+    <string name="settings">Configuración</string>
+    <string name="device_name">Nombre del dispositivo</string>
+    <string name="service_uuid">UUID del servicio</string>
+    <string name="open_char_uuid">UUID caract. abrir</string>
+    <string name="status_char_uuid">UUID caract. estado</string>
+    <string name="save_settings">Guardar cambios</string>
+    <string name="reset_defaults">Restablecer valores</string>
+    <string name="main_title">Controlador de Garaje</string>
+    <string name="btn_reconnect">Reconectar</string>
+</resources>

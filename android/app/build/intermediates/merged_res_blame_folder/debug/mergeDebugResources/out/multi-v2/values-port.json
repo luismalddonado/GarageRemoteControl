@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.garagedoor.app-mergeDebugResources-33:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\w200012\\.gradle\\caches\\9.3.1\\transforms\\35dc640ad4548ff5274e56e4e2336cd6\\workspace\\transformed\\appcompat-1.6.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}
