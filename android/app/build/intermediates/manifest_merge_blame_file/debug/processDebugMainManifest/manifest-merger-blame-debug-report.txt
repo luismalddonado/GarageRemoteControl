@@ -124,9 +124,9 @@
 67-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:17-73
 67-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:25-70
 68
-69                <category android:name="androidx.car.app.category.PARKING" />
-69-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:17-78
-69-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:27-75
+69                <category android:name="androidx.car.app.category.IOT" />
+69-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:17-74
+69-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:27-71
 70            </intent-filter>
 71        </service>
 72

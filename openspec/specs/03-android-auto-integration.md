@@ -5,7 +5,7 @@ This specification covers the driver-focused interface for Android Auto, designe
 
 ## Project Configuration
 - **Library**: `androidx.car.app:app:1.7.0`
-- **Category**: `androidx.car.app.category.PARKING` (Ensures the app is available when the car is in a safe state).
+- **Category**: `androidx.car.app.category.IOT` (Appropriate for home automation/garage door controls).
 - **Permissions**: Must handle `BLUETOOTH_CONNECT` and `BLUETOOTH_SCAN` permissions gracefully within the Car App lifecycle.
 
 ## User Interface

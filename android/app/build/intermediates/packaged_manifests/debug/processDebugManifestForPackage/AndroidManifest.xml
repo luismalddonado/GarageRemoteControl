@@ -66,7 +66,7 @@
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
 
-                <category android:name="androidx.car.app.category.PARKING" />
+                <category android:name="androidx.car.app.category.IOT" />
             </intent-filter>
         </service>
 

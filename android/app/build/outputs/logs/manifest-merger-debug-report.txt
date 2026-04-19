@@ -164,16 +164,16 @@ ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:4
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:44:13-36
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:43:13-56
-intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.PARKING
+intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.IOT
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:45:13-48:29
 action#androidx.car.app.CarAppService
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:17-73
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:25-70
-category#androidx.car.app.category.PARKING
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:17-78
+category#androidx.car.app.category.IOT
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:17-74
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:27-75
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:27-71
 meta-data#androidx.car.app.minCarApiLevel
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:51:9-53:33
 	android:value

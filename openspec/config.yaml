@@ -32,7 +32,7 @@ context: |
     - Use Android Coroutines for BLE operations.
     - Perform BLE operations in background threads.
     - Implement retry mechanisms for failures.
-    - Category: androidx.car.app.category.PARKING.
+    - Category: androidx.car.app.category.IOT.
 
 rules:
   specs:
