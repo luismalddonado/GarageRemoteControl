@@ -1,42 +1,38 @@
 [
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\xml_automotive_app_desc.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\xml\\automotive_app_desc.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/mipmap_ic_launcher_round.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/mipmap/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/mipmap_ic_launcher.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/mipmap/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\layout\\activity_main.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/xml_automotive_app_desc.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/xml/automotive_app_desc.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\mipmap_ic_launcher.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\mipmap\\ic_launcher.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.garagedoor.app-debug-35:/layout_activity_configuration.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/layout/activity_configuration.xml"
     },
     {
         "merged": "com.example.garagedoor.app-debug-35:/layout_activity_main.xml.flat",
         "source": "com.example.garagedoor.app-main-37:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\mipmap_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\mipmap\\ic_launcher_round.xml"
-    },
-    {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\layout_activity_configuration.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\layout\\activity_configuration.xml"
-    },
-    {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-debug-35:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.garagedoor.app-debug-35:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.garagedoor.app-main-37:/mipmap-anydpi-v26/ic_launcher_round.xml"
     }
 ]

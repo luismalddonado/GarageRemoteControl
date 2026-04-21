@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-65:12
-INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-65:12
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-80:12
+INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:2:1-80:12
 MERGED from [androidx.databinding:viewbinding:9.1.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\5f38697229407b9a14c15e503391db96\workspace\transformed\jetified-viewbinding-9.1.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\defbb3974b33797e25a0f3361e55e9e3\workspace\transformed\material-1.10.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\w200012\.gradle\caches\9.3.1\transforms\94268ea856684f6f2da10c4166e87e49\workspace\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
@@ -87,9 +87,29 @@ uses-permission#android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:11:5-94
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:11:22-91
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.POST_NOTIFICATIONS
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:13:5-77
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:13:22-74
+uses-feature#android.hardware.type.automotive
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:15:5-94
+	android:required
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:15:67-91
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:15:19-66
+uses-feature#android.software.car.templates_host
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:16:5-96
+	android:required
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:16:70-93
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:16:19-69
 application
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:13:5-63:19
-INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:13:5-63:19
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:18:5-78:19
+INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:18:5-78:19
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\defbb3974b33797e25a0f3361e55e9e3\workspace\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.10.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\defbb3974b33797e25a0f3361e55e9e3\workspace\transformed\material-1.10.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\w200012\.gradle\caches\9.3.1\transforms\94268ea856684f6f2da10c4166e87e49\workspace\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -113,85 +133,101 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\w200012\.gradle\ca
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\5e6f0c3a2a0278ad24461de0f3c7159b\workspace\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:18:9-35
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:23:9-35
 	android:label
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:21:9-41
 	android:roundIcon
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:17:9-54
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:22:9-54
 	android:icon
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:15:9-43
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:20:9-43
 	android:allowBackup
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:14:9-35
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:19:9-48
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:24:9-48
 activity#com.example.garagedoor.ui.MainActivity
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:21:9-28:20
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:26:9-33:20
 	android:exported
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:23:13-36
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:28:13-36
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:22:13-44
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:27:13-44
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:29:13-32:29
 action#android.intent.action.MAIN
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:30:17-69
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:30:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:26:17-77
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:31:27-74
 activity#com.example.garagedoor.ui.ConfigurationActivity
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:30:9-33:61
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:35:9-38:61
 	android:parentActivityName
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:33:13-58
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:38:13-58
 	android:label
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:32:13-37
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:31:13-53
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:36:13-53
 service#com.example.garagedoor.ble.BleService
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:35:9-39:63
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:40:9-44:63
 	android:enabled
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:37:13-35
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:42:13-35
 	android:exported
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:38:13-37
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:43:13-37
 	android:foregroundServiceType
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:39:13-60
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:44:13-60
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:36:13-43
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:41:13-43
 service#com.example.garagedoor.car.GarageDoorCarAppService
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:42:9-49:19
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:9-55:19
+	android:label
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:50:13-45
 	android:exported
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:44:13-36
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:49:13-36
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:43:13-56
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:48:13-56
 intent-filter#action:name:androidx.car.app.CarAppService+category:name:androidx.car.app.category.IOT
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:45:13-48:29
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:51:13-54:29
 action#androidx.car.app.CarAppService
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:17-73
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:52:17-73
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:46:25-70
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:52:25-70
 category#androidx.car.app.category.IOT
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:17-74
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:53:17-74
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:47:27-71
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:53:27-71
 meta-data#androidx.car.app.minCarApiLevel
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:51:9-53:33
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:57:9-59:33
 	android:value
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:53:13-30
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:59:13-30
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:52:13-59
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:58:13-59
 meta-data#com.google.android.gms.car.application
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:55:9-57:59
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:61:9-63:59
 	android:resource
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:57:13-56
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:63:13-56
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:56:13-66
-meta-data#distractionOptimized
-ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:59:9-61:36
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:62:13-66
+meta-data#com.google.android.gms.car.distractionOptimized
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:65:9-67:36
 	android:value
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:61:13-33
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:67:13-33
 	android:name
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:60:13-48
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:66:13-75
+receiver#com.example.garagedoor.ble.BootReceiver
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:69:9-76:20
+	android:enabled
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:71:13-35
+	android:exported
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:72:13-36
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:70:13-45
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:73:13-75:29
+action#android.intent.action.BOOT_COMPLETED
+ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:74:17-79
+	android:name
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:74:25-76
 uses-sdk
 INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml

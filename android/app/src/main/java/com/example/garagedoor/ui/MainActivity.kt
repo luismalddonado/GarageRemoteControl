@@ -24,50 +24,56 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        bleManager = BleManager(this)
+        bleManager = BleManager.getInstance(this)
         configRepository = ConfigRepository(this)
 
         setupListeners()
         
         if (hasPermissions()) {
+            startBleService()
             observeState()
         } else {
             requestPermissions()
         }
     }
 
-    private fun hasPermissions(): Boolean {
-        val permissions = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            arrayOf(
-                android.Manifest.permission.BLUETOOTH_SCAN,
-                android.Manifest.permission.BLUETOOTH_CONNECT,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            )
+    private fun startBleService() {
+        val intent = Intent(this, com.example.garagedoor.ble.BleService::class.java)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            startForegroundService(intent)
         } else {
-            arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION)
+            startService(intent)
         }
+    }
+
+    private fun getRequiredPermissions(): Array<String> {
+        val permissions = mutableListOf<String>()
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+            permissions.add(android.Manifest.permission.BLUETOOTH_SCAN)
+            permissions.add(android.Manifest.permission.BLUETOOTH_CONNECT)
+        }
+        permissions.add(android.Manifest.permission.ACCESS_FINE_LOCATION)
         
-        return permissions.all { 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            permissions.add(android.Manifest.permission.POST_NOTIFICATIONS)
+        }
+        return permissions.toTypedArray()
+    }
+
+    private fun hasPermissions(): Boolean {
+        return getRequiredPermissions().all { 
             checkSelfPermission(it) == android.content.pm.PackageManager.PERMISSION_GRANTED 
         }
     }
 
     private fun requestPermissions() {
-        val permissions = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
-            arrayOf(
-                android.Manifest.permission.BLUETOOTH_SCAN,
-                android.Manifest.permission.BLUETOOTH_CONNECT,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
-            )
-        } else {
-            arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION)
-        }
-        requestPermissions(permissions, 101)
+        requestPermissions(getRequiredPermissions(), 101)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 101 && grantResults.all { it == android.content.pm.PackageManager.PERMISSION_GRANTED }) {
+            startBleService()
             observeState()
         }
     }
@@ -104,16 +110,24 @@ class MainActivity : AppCompatActivity() {
                 binding.tvCounter.text = if (value != null) {
                     getString(R.string.operations_count, value)
                 } else {
-                    "Operaciones pendientes: --"
+                    getString(R.string.operations_count, 0).replace("0", "--")
                 }
             }
         }
     }
 
     private fun updateUi(state: ConnectionState) {
-        binding.tvStatus.text = state.name
+        val statusResId = when (state) {
+            ConnectionState.SCANNING -> R.string.status_scanning
+            ConnectionState.CONNECTING -> R.string.status_connecting
+            ConnectionState.CONNECTED -> R.string.status_connected
+            ConnectionState.DISCONNECTED -> R.string.status_disconnected
+        }
+        binding.tvStatus.setText(statusResId)
         binding.btnOpen.isEnabled = state == ConnectionState.CONNECTED
-        binding.btnReconnect.visibility = if (state == ConnectionState.DISCONNECTED) View.VISIBLE else View.GONE
+        
+        // Spec: Reconnect button visible when not connected (Disconnected, Scanning, Connecting)
+        binding.btnReconnect.visibility = if (state != ConnectionState.CONNECTED) View.VISIBLE else View.GONE
         
         val color = when (state) {
             ConnectionState.CONNECTED -> getColor(R.color.status_connected)
@@ -125,6 +139,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        bleManager.disconnect()
+        // We no longer call bleManager.disconnect() here to allow the foreground service to maintain the connection
     }
 }

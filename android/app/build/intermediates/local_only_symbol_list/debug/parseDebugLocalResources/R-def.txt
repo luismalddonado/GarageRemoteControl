@@ -40,6 +40,7 @@ string status_char_uuid
 string status_connected
 string status_connecting
 string status_disconnected
+string status_display
 string status_scanning
 style Theme.GarageDoor
 xml automotive_app_desc

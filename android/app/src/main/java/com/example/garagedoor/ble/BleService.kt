@@ -2,9 +2,12 @@ package com.example.garagedoor.ble
 
 import android.app.*
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.os.Binder
+import android.os.Build
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
+import com.example.garagedoor.R
 import com.example.garagedoor.ui.MainActivity
 
 class BleService : Service() {
@@ -18,8 +21,14 @@ class BleService : Service() {
 
     override fun onCreate() {
         super.onCreate()
-        bleManager = BleManager(this)
-        startForeground(1, createNotification())
+        bleManager = BleManager.getInstance(this)
+        
+        val notification = createNotification()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            startForeground(1, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_CONNECTED_DEVICE)
+        } else {
+            startForeground(1, notification)
+        }
     }
 
     private fun createNotification(): Notification {
@@ -33,7 +42,7 @@ class BleService : Service() {
         return NotificationCompat.Builder(this, channelId)
             .setContentTitle("Garage Door Controller")
             .setContentText("Keeping BLE connection alive...")
-            .setSmallIcon(android.R.drawable.stat_sys_data_bluetooth)
+            .setSmallIcon(R.mipmap.ic_launcher)
             .setContentIntent(pendingIntent)
             .build()
     }

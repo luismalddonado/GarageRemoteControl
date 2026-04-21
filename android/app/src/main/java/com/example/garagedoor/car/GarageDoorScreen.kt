@@ -13,8 +13,8 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
-
-    private val bleManager = BleManager(carContext)
+ 
+    private val bleManager = BleManager.getInstance(carContext)
     private val configRepository = ConfigRepository(carContext)
     private var lastCounter: Int? = null
 
@@ -57,16 +57,17 @@ class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
 
     override fun onGetTemplate(): Template {
         val state = bleManager.connectionState.value
-        val statusName = when(state) {
-            ConnectionState.CONNECTED -> "Conectado"
-            ConnectionState.DISCONNECTED -> "Desconectado"
-            ConnectionState.SCANNING -> "Escaneando"
-            ConnectionState.CONNECTING -> "Conectando"
+        val statusResId = when(state) {
+            ConnectionState.CONNECTED -> R.string.status_connected
+            ConnectionState.DISCONNECTED -> R.string.status_disconnected
+            ConnectionState.SCANNING -> R.string.status_scanning
+            ConnectionState.CONNECTING -> R.string.status_connecting
         }
-        val statusText = "Estado: $statusName | Pendientes: ${lastCounter ?: "--"}"
+        val statusName = carContext.getString(statusResId)
+        val statusText = carContext.getString(R.string.status_display, statusName, lastCounter?.toString() ?: "--")
 
         val action = Action.Builder()
-            .setTitle("Abrir Garaje")
+            .setTitle(carContext.getString(R.string.open_door))
             .setBackgroundColor(CarColor.GREEN)
             .setOnClickListener { bleManager.openDoor() }
             .setEnabled(state == ConnectionState.CONNECTED)
@@ -79,7 +80,7 @@ class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
 
         return PaneTemplate.Builder(pane)
             .setHeaderAction(Action.APP_ICON)
-            .setTitle("Puerta Garaje")
+            .setTitle(carContext.getString(R.string.main_title))
             .build()
     }
 }

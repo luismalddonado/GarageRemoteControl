@@ -15,4 +15,5 @@
     <string name="reset_defaults">Restablecer valores</string>
     <string name="main_title">Controlador de Garaje</string>
     <string name="btn_reconnect">Reconectar</string>
+    <string name="status_display">Estado: %1$s | Pendientes: %2$s</string>
 </resources>

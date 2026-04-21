@@ -22,7 +22,16 @@ enum class ConnectionState {
 }
 
 @SuppressLint("MissingPermission")
-class BleManager(private val context: Context) {
+class BleManager private constructor(private val context: Context) {
+ 
+    companion object {
+        @Volatile
+        private var INSTANCE: BleManager? = null
+        fun getInstance(context: Context): BleManager =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: BleManager(context.applicationContext).also { INSTANCE = it }
+            }
+    }
 
     private val bluetoothManager = context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
     private val adapter = bluetoothManager.adapter

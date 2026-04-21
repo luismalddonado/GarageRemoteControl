@@ -3973,6 +3973,7 @@ int string status_char_uuid 0x7f1000b2
 int string status_connected 0x7f1000b3
 int string status_connecting 0x7f1000b4
 int string status_disconnected 0x7f1000b5
+int string status_display 0x7f1000b7
 int string status_scanning 0x7f1000b6
 int style AlertDialog_AppCompat 0x7f110000
 int style AlertDialog_AppCompat_Light 0x7f110001

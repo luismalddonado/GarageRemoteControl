@@ -21,6 +21,7 @@
     <string name="status_connected">Conectado</string>
     <string name="status_connecting">Conectando...</string>
     <string name="status_disconnected">Desconectado</string>
+    <string name="status_display">Estado: %1$s | Pendientes: %2$s</string>
     <string name="status_scanning">Escaneando...</string>
     <style name="Theme.GarageDoor" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>

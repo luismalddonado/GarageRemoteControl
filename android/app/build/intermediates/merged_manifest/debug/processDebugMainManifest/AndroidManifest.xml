@@ -15,6 +15,15 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <uses-feature
+        android:name="android.hardware.type.automotive"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.car.templates_host"
+        android:required="true" />
 
     <queries>
         <provider
@@ -62,7 +71,8 @@
         <!-- Android Auto Service -->
         <service
             android:name="com.example.garagedoor.car.GarageDoorCarAppService"
-            android:exported="true" >
+            android:exported="true"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="androidx.car.app.CarAppService" />
 
@@ -77,8 +87,17 @@
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
         <meta-data
-            android:name="distractionOptimized"
+            android:name="com.google.android.gms.car.distractionOptimized"
             android:value="true" />
+
+        <receiver
+            android:name="com.example.garagedoor.ble.BootReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
         <activity
             android:name="androidx.car.app.CarAppPermissionActivity"
