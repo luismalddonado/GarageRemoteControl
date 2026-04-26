@@ -21,14 +21,7 @@ The app is built with modern Android standards:
 ## Quick Start
 1. Clone the repository.
 2. Open the `android` folder in Android Studio.
-3. Configure your ESPHome/BLE device with the following parameters (defaults):
-   - **Device Name**: `puertagaraje`
-   - **Service UUID**: `180F`
-   - **Open Characteristic**: `1801`
-   - **Status Characteristic**: `1802`
-   - **Learn Start**: `1803`
-   - **Learn Stop**: `1804`
-   - **Return Code**: `1805`
+3. The app uses this project https://github.com/luismalddonado/ESPHomeGarageRemote as backend to control the garage door. Configure your ESP32 with `puertagaraje.yaml`. 
 
 ## Android 14 Requirements
 This app includes necessary configurations for Android 14+:
