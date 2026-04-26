@@ -1,28 +1,37 @@
 # Garage Door Android Project
 
-This is a complete Android Studio project for controlling a garage door via BLE, with Android Auto integration.
+This is a complete Android Studio project for controlling a garage door via BLE, featuring high-reliability connection management and full Android Auto integration.
 
-## Features
-- **BLE Communication**: Connects to ESPHome-based garage door controllers.
-- **Mobile UI**: Clean Material 3 interface with a large "Open Door" button and status feedback.
-- **Configuration**: Easily change Service and Characteristic UUIDs.
-- **Android Auto**: Driver-focused interface for safe operation while driving.
-- **Reactive UI**: Built with Kotlin Coroutines and StateFlow for real-time updates.
+## Key Features
+- **Reliable BLE Connectivity**: Custom connection manager with automatic retry and orientation-change resilience.
+- **Background Persistence**: Foreground Service ensures the connection stays alive for immediate response via phone or car.
+- **Android Auto Integration**: Dedicated "IOT" category service for controlling your garage from the car's infotainment system.
+- **Material 3 UI**: Modern, accessible interface with real-time status feedback.
+- **Learning Mode**: Special configuration screen to trigger and capture learned codes from the hardware.
 
-## Setup Instructions
-1. Open the `android/` directory in **Android Studio** (Hedgehog or newer recommended).
-2. Sync the project with Gradle files.
-3. Ensure you have the necessary permissions granted on the device (Bluetooth and Location).
-4. Connect your phone to a car or use the **Android Auto Desktop Head Unit (DHU)** to test the car integration.
+## Technical Architecture
+- **BleManager**: A thread-safe singleton managing the GATT connection, client tracking, and command throttling.
+- **BleService**: A Foreground Service that acts as a persistent client, keeping the connection active in the background.
+- **DataStore**: Modern reactive settings storage for device and characteristic configuration.
+- **CarAppService**: Integration with `androidx.car.app` for the automotive experience.
 
-## BLE Specifications
-- **Default Device Name**: `puertagaraje`
-- **Service UUID**: `180F`
-- **Open Characteristic**: `1801` (Write)
-- **Status Characteristic**: `1802` (Read/Notify)
+## Setup & Testing
+1. **Permissions**: The app requests Bluetooth Scan/Connect, Location, and Post Notifications.
+2. **Foreground Service**: On Android 14+, the `FOREGROUND_SERVICE_CONNECTED_DEVICE` permission is used.
+3. **Testing Android Auto**: Use the **Desktop Head Unit (DHU)**. The app is registered as an IOT category app.
+4. **Boot Persistence**: The `BootReceiver` ensures the service restarts automatically after a device reboot.
 
-## Project Structure
-- `app/src/main/java/com/example/garagedoor/ble`: BLE logic and manager.
-- `app/src/main/java/com/example/garagedoor/ui`: Mobile activities.
-- `app/src/main/java/com/example/garagedoor/car`: Android Auto integration.
-- `app/src/main/java/com/example/garagedoor/data`: Settings persistence via DataStore.
+## BLE Profile
+| Characteristic | UUID | Property |
+| :--- | :--- | :--- |
+| Service | `180F` | - |
+| Open Door | `1801` | Write |
+| Status/Counter | `1802` | Notify |
+| Start Learning | `1803` | Write |
+| Stop Learning | `1804` | Write |
+| Return Code | `1805` | Notify |
+
+## Development Requirements
+- Android Studio Iguana+
+- Kotlin 1.9+
+- Android SDK 34 (Target)
