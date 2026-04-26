@@ -10,9 +10,11 @@ import com.example.garagedoor.ble.BleManager
 import com.example.garagedoor.ble.ConnectionState
 import com.example.garagedoor.data.ConfigRepository
 import com.example.garagedoor.databinding.ActivityMainBinding
+import android.os.Build
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import com.example.garagedoor.ble.BleService
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,6 +30,14 @@ class MainActivity : AppCompatActivity() {
         bleManager = BleManager.getInstance(this)
         configRepository = ConfigRepository(this)
 
+        // Start BLE Foreground Service
+        val serviceIntent = Intent(this, BleService::class.java)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            startForegroundService(serviceIntent)
+        } else {
+            startService(serviceIntent)
+        }
+
         setupListeners()
     }
 
@@ -37,7 +47,7 @@ class MainActivity : AppCompatActivity() {
             observeState()
             lifecycleScope.launch {
                 val config = configRepository.configFlow.first()
-                bleManager.activityStarted(config)
+                bleManager.startClient(config)
             }
         } else {
             requestPermissions()
@@ -46,7 +56,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        bleManager.activityStopped()
+        bleManager.stopClient()
     }
 
     private fun getRequiredPermissions(): Array<String> {
@@ -79,7 +89,7 @@ class MainActivity : AppCompatActivity() {
             observeState()
             lifecycleScope.launch {
                 val config = configRepository.configFlow.first()
-                bleManager.activityStarted(config)
+                bleManager.startClient(config)
             }
         }
     }

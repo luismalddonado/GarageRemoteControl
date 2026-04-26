@@ -36,7 +36,7 @@ class ConfigurationActivity : AppCompatActivity() {
         super.onStart()
         lifecycleScope.launch {
             val config = configRepository.configFlow.first()
-            bleManager.activityStarted(config)
+            bleManager.startClient(config)
             
             // Trigger a manual read of the current code
             bleManager.readLearnedCode()
@@ -47,7 +47,7 @@ class ConfigurationActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        bleManager.activityStopped()
+        bleManager.stopClient()
     }
 
     private fun observeState() {

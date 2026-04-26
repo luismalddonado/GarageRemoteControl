@@ -9,6 +9,11 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.example.garagedoor.R
 import com.example.garagedoor.ui.MainActivity
+import com.example.garagedoor.data.ConfigRepository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class BleService : Service() {
 
@@ -22,6 +27,12 @@ class BleService : Service() {
     override fun onCreate() {
         super.onCreate()
         bleManager = BleManager.getInstance(this)
+        val configRepository = ConfigRepository(this)
+        
+        CoroutineScope(Dispatchers.IO).launch {
+            val config = configRepository.configFlow.first()
+            bleManager.startClient(config)
+        }
         
         val notification = createNotification()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
@@ -29,6 +40,11 @@ class BleService : Service() {
         } else {
             startForeground(1, notification)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        bleManager.stopClient()
     }
 
     private fun createNotification(): Notification {

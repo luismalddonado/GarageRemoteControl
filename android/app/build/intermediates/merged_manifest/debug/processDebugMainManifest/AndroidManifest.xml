@@ -15,6 +15,8 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
 
     <uses-feature
         android:name="android.hardware.type.automotive"
@@ -81,6 +83,12 @@
         <meta-data
             android:name="com.google.android.gms.car.distractionOptimized"
             android:value="true" />
+
+        <!-- BLE Service -->
+        <service
+            android:name="com.example.garagedoor.ble.BleService"
+            android:exported="false"
+            android:foregroundServiceType="connectedDevice" />
 
         <receiver
             android:name="com.example.garagedoor.ble.BootReceiver"

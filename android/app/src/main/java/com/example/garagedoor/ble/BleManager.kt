@@ -57,18 +57,24 @@ class BleManager private constructor(private val context: Context) {
     private var lastWriteTime = 0L
     private val THROTTLE_MS = 3000L
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
-    private var foregroundActivityCount = 0
+    private var connectionClients = 0
 
-    fun activityStarted(config: BleConfig) {
-        foregroundActivityCount++
+    fun startClient(config: BleConfig) {
+        connectionClients++
         startConnection(config)
     }
 
-    fun activityStopped() {
-        foregroundActivityCount--
-        if (foregroundActivityCount <= 0) {
-            foregroundActivityCount = 0
-            disconnect()
+    fun stopClient() {
+        connectionClients--
+        if (connectionClients <= 0) {
+            connectionClients = 0
+            // Delay disconnection to handle orientation changes or quick activity transitions
+            scope.launch {
+                delay(1000)
+                if (connectionClients <= 0) {
+                    disconnect()
+                }
+            }
         }
     }
 

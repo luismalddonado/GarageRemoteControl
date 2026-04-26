@@ -11,6 +11,8 @@ import com.example.garagedoor.data.ConfigRepository
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 
 class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
  
@@ -19,10 +21,17 @@ class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
     private var lastCounter: Int? = null
 
     init {
-        if (hasPermissions()) {
-            startBle()
-        }
-        
+        lifecycle.addObserver(object : DefaultLifecycleObserver {
+            override fun onStart(owner: LifecycleOwner) {
+                if (hasPermissions()) {
+                    startBle()
+                }
+            }
+
+            override fun onStop(owner: LifecycleOwner) {
+                bleManager.stopClient()
+            }
+        })
         observeState()
     }
 
@@ -38,7 +47,7 @@ class GarageDoorScreen(carContext: CarContext) : Screen(carContext) {
     private fun startBle() {
         lifecycleScope.launch {
             val config = configRepository.configFlow.first()
-            bleManager.startConnection(config)
+            bleManager.startClient(config)
         }
     }
 
