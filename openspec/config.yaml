@@ -21,10 +21,11 @@ context: |
     - Text area for connection status and BLE info (repeat_counter_read value).
   - Configuration Activity:
     - BLE Device Name (Default: "puertagaraje").
-    - BLE Device UUID (Default: "180F").
-    - Characteristics Configuration:
-      - open_the_door: "1801" (write+notify).
-      - repeat_counter_read: "1802" (read+notify).
+    - "Start learning new code" button (triggers write command 1803).
+    - "Stop learning new code" button (triggers write command 1804).
+    - "Current code" text area (triggers read command 1805).
+    
+
   - Android Auto Screen:
     - Button to trigger open operation.
     - Text area for status and BLE info.

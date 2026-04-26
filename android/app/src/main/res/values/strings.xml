@@ -16,4 +16,12 @@
     <string name="main_title">Controlador de Garaje</string>
     <string name="btn_reconnect">Reconectar</string>
     <string name="status_display">Estado: %1$s | Pendientes: %2$s</string>
+    <string name="learn_start_uuid">UUID inicio aprendizaje</string>
+    <string name="learn_stop_uuid">UUID fin aprendizaje</string>
+    <string name="learn_return_uuid">UUID retorno código</string>
+    <string name="btn_start_learning">Iniciar aprendizaje</string>
+    <string name="btn_learning_active">Aprendiendo nuevo código...</string>
+    <string name="btn_stop_learning">Detener aprendizaje</string>
+    <string name="current_code_label">Código actual: %s</string>
+    <string name="code_learning_title">Aprendizaje de Códigos</string>
 </resources>

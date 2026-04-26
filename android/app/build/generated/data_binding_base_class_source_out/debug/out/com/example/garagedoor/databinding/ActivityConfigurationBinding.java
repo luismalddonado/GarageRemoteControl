@@ -6,12 +6,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.garagedoor.R;
-import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -21,34 +21,25 @@ public final class ActivityConfigurationBinding implements ViewBinding {
   private final ScrollView rootView;
 
   @NonNull
-  public final Button btnReset;
+  public final Button btnStartLearning;
 
   @NonNull
-  public final Button btnSave;
+  public final Button btnStopLearning;
 
   @NonNull
-  public final TextInputEditText etDeviceName;
+  public final TextView etDeviceName;
 
   @NonNull
-  public final TextInputEditText etOpenUuid;
+  public final TextView tvCurrentCode;
 
-  @NonNull
-  public final TextInputEditText etServiceUuid;
-
-  @NonNull
-  public final TextInputEditText etStatusUuid;
-
-  private ActivityConfigurationBinding(@NonNull ScrollView rootView, @NonNull Button btnReset,
-      @NonNull Button btnSave, @NonNull TextInputEditText etDeviceName,
-      @NonNull TextInputEditText etOpenUuid, @NonNull TextInputEditText etServiceUuid,
-      @NonNull TextInputEditText etStatusUuid) {
+  private ActivityConfigurationBinding(@NonNull ScrollView rootView,
+      @NonNull Button btnStartLearning, @NonNull Button btnStopLearning,
+      @NonNull TextView etDeviceName, @NonNull TextView tvCurrentCode) {
     this.rootView = rootView;
-    this.btnReset = btnReset;
-    this.btnSave = btnSave;
+    this.btnStartLearning = btnStartLearning;
+    this.btnStopLearning = btnStopLearning;
     this.etDeviceName = etDeviceName;
-    this.etOpenUuid = etOpenUuid;
-    this.etServiceUuid = etServiceUuid;
-    this.etStatusUuid = etStatusUuid;
+    this.tvCurrentCode = tvCurrentCode;
   }
 
   @Override
@@ -78,44 +69,32 @@ public final class ActivityConfigurationBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnReset;
-      Button btnReset = ViewBindings.findChildViewById(rootView, id);
-      if (btnReset == null) {
+      id = R.id.btnStartLearning;
+      Button btnStartLearning = ViewBindings.findChildViewById(rootView, id);
+      if (btnStartLearning == null) {
         break missingId;
       }
 
-      id = R.id.btnSave;
-      Button btnSave = ViewBindings.findChildViewById(rootView, id);
-      if (btnSave == null) {
+      id = R.id.btnStopLearning;
+      Button btnStopLearning = ViewBindings.findChildViewById(rootView, id);
+      if (btnStopLearning == null) {
         break missingId;
       }
 
       id = R.id.etDeviceName;
-      TextInputEditText etDeviceName = ViewBindings.findChildViewById(rootView, id);
+      TextView etDeviceName = ViewBindings.findChildViewById(rootView, id);
       if (etDeviceName == null) {
         break missingId;
       }
 
-      id = R.id.etOpenUuid;
-      TextInputEditText etOpenUuid = ViewBindings.findChildViewById(rootView, id);
-      if (etOpenUuid == null) {
+      id = R.id.tvCurrentCode;
+      TextView tvCurrentCode = ViewBindings.findChildViewById(rootView, id);
+      if (tvCurrentCode == null) {
         break missingId;
       }
 
-      id = R.id.etServiceUuid;
-      TextInputEditText etServiceUuid = ViewBindings.findChildViewById(rootView, id);
-      if (etServiceUuid == null) {
-        break missingId;
-      }
-
-      id = R.id.etStatusUuid;
-      TextInputEditText etStatusUuid = ViewBindings.findChildViewById(rootView, id);
-      if (etStatusUuid == null) {
-        break missingId;
-      }
-
-      return new ActivityConfigurationBinding((ScrollView) rootView, btnReset, btnSave,
-          etDeviceName, etOpenUuid, etServiceUuid, etStatusUuid);
+      return new ActivityConfigurationBinding((ScrollView) rootView, btnStartLearning,
+          btnStopLearning, etDeviceName, tvCurrentCode);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

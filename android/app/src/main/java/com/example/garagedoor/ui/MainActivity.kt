@@ -11,6 +11,7 @@ import com.example.garagedoor.ble.ConnectionState
 import com.example.garagedoor.data.ConfigRepository
 import com.example.garagedoor.databinding.ActivityMainBinding
 import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -28,22 +29,24 @@ class MainActivity : AppCompatActivity() {
         configRepository = ConfigRepository(this)
 
         setupListeners()
-        
+    }
+
+    override fun onStart() {
+        super.onStart()
         if (hasPermissions()) {
-            startBleService()
             observeState()
+            lifecycleScope.launch {
+                val config = configRepository.configFlow.first()
+                bleManager.activityStarted(config)
+            }
         } else {
             requestPermissions()
         }
     }
 
-    private fun startBleService() {
-        val intent = Intent(this, com.example.garagedoor.ble.BleService::class.java)
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-            startForegroundService(intent)
-        } else {
-            startService(intent)
-        }
+    override fun onStop() {
+        super.onStop()
+        bleManager.activityStopped()
     }
 
     private fun getRequiredPermissions(): Array<String> {
@@ -73,8 +76,11 @@ class MainActivity : AppCompatActivity() {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 101 && grantResults.all { it == android.content.pm.PackageManager.PERMISSION_GRANTED }) {
-            startBleService()
             observeState()
+            lifecycleScope.launch {
+                val config = configRepository.configFlow.first()
+                bleManager.activityStarted(config)
+            }
         }
     }
 

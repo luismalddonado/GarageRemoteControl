@@ -3166,9 +3166,9 @@ id bounceEnd
 id bounceStart
 id btnOpen
 id btnReconnect
-id btnReset
-id btnSave
 id btnSettings
+id btnStartLearning
+id btnStopLearning
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3253,9 +3253,6 @@ id end_padder
 id enterAlways
 id enterAlwaysCollapsed
 id etDeviceName
-id etOpenUuid
-id etServiceUuid
-id etStatusUuid
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3555,6 +3552,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvCounter
+id tvCurrentCode
 id tvStatus
 id tvTitle
 id unchecked
@@ -3828,7 +3826,10 @@ string bottomsheet_action_expand
 string bottomsheet_action_expand_halfway
 string bottomsheet_drag_handle_clicked
 string bottomsheet_drag_handle_content_description
+string btn_learning_active
 string btn_reconnect
+string btn_start_learning
+string btn_stop_learning
 string call_notification_answer_action
 string call_notification_answer_video_action
 string call_notification_decline_action
@@ -3841,6 +3842,8 @@ string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
+string code_learning_title
+string current_code_label
 string device_name
 string error_a11y_label
 string error_icon_content_description
@@ -3850,6 +3853,9 @@ string fab_transformation_sheet_behavior
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string item_view_role_description
+string learn_return_uuid
+string learn_start_uuid
+string learn_stop_uuid
 string m3_exceed_max_badge_text_suffix
 string m3_ref_typeface_brand_medium
 string m3_ref_typeface_brand_regular

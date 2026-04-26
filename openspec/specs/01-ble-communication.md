@@ -22,10 +22,30 @@ This specification defines the Bluetooth Low Energy (BLE) interaction between th
 - **Data Format**: 4-byte little-endian integer.
 - **Decoding**: Must be decoded as a little-endian unsigned integer to display the counter value.
 
+### 3. Start Learning process (`learn_code_start`)
+- **UUID**: `1803`
+- **Properties**: `WRITE`
+- **Function**: Trigger the learning of a new code in the ESP Home device.
+- **Data Format**: 1-byte command (e.g., `0x01` to start learning).
+
+### 4. Stop Learning process (`learn_code_end`)
+- **UUID**: `1804`
+- **Properties**: `WRITE`
+- **Function**: Trigger the stopping of the learning of a new code in the ESP Home device.
+- **Dependency**: Needs to be triggered automatically 10 seconds after Start Learning process is triggered.
+- **Data Format**: 1-byte command (e.g., `0x01` to stop learning).
+
+### 5. Get learned code (`return_learn_code`)
+- **UUID**: `1805`
+- **Properties**: `READ`, `NOTIFY`
+- **Function**: Get the learned code from the ESP Home device.
+- **Data Format**: Big-endian int32 values, packed as uint8 bytes (4 bytes per value)
+
+
 ## Connection Flow
 1. **Scanning**:
    - Filter by Service UUID or Device Name (`puertagaraje`).
-   - Implement a timeout for scanning (e.g., 10 seconds).
+   - Implement a timeout for scanning (e.g., 3 seconds).
 2. **Connection**:
    - Establish connection using Android BLE APIs.
    - Use `connectGatt` with `autoConnect = false` for initial pairing.
@@ -33,6 +53,7 @@ This specification defines the Bluetooth Low Energy (BLE) interaction between th
    - Discover services and verify characteristic UUIDs are present.
 4. **Subscription**:
    - Subscribe to notifications for `repeat_counter_read` to receive status updates without polling.
+   - Subscribe to notifications for `return_learn_code` to receive current learned codes.
 
 ## Reliability and Safety
 - **Automatic Reconnection**: If the connection drops, the application must automatically attempt to reconnect to the device.

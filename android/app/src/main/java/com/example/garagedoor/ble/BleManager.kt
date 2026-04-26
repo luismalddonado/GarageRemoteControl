@@ -43,12 +43,34 @@ class BleManager private constructor(private val context: Context) {
     private val _counterValue = MutableStateFlow<Int?>(null)
     val counterValue: StateFlow<Int?> = _counterValue
 
+    private val _learnedCode = MutableStateFlow<String?>(null)
+    val learnedCode: StateFlow<String?> = _learnedCode
+
+    private val _isLearning = MutableStateFlow(false)
+    val isLearning: StateFlow<Boolean> = _isLearning
+
     private var currentConfig: BleConfig? = null
     private var retryJob: Job? = null
     private var retryCount = 0
     private val maxRetries = 5
     private val backoffDelays = listOf(1000L, 2000L, 4000L, 8000L, 16000L)
+    private var lastWriteTime = 0L
+    private val THROTTLE_MS = 3000L
     private val scope = CoroutineScope(Dispatchers.IO + SupervisorJob())
+    private var foregroundActivityCount = 0
+
+    fun activityStarted(config: BleConfig) {
+        foregroundActivityCount++
+        startConnection(config)
+    }
+
+    fun activityStopped() {
+        foregroundActivityCount--
+        if (foregroundActivityCount <= 0) {
+            foregroundActivityCount = 0
+            disconnect()
+        }
+    }
 
     private fun toUuid(uuidString: String?): UUID? {
         if (uuidString == null) return null
@@ -86,9 +108,9 @@ class BleManager private constructor(private val context: Context) {
 
         scanner.startScan(listOf(filter), settings, scanCallback)
         
-        // Timeout scan after 10s
+        // Timeout scan after 3s as per updated spec
         scope.launch {
-            delay(10000)
+            delay(3000)
             if (_connectionState.value == ConnectionState.SCANNING) {
                 stopScanning()
                 _connectionState.value = ConnectionState.DISCONNECTED
@@ -100,7 +122,7 @@ class BleManager private constructor(private val context: Context) {
     private fun handleRetry() {
         if (retryCount < maxRetries) {
             retryJob = scope.launch {
-                val delayTime = backoffDelays.getOrElse(retryCount) { 16000L }
+                val delayTime = backoffDelays.getOrElse(retryCount) { 60000L }
                 Log.d("BleManager", "Retrying connection in ${delayTime}ms (Attempt ${retryCount + 1})")
                 delay(delayTime)
                 retryCount++
@@ -144,7 +166,8 @@ class BleManager private constructor(private val context: Context) {
         override fun onConnectionStateChange(gatt: BluetoothGatt, status: Int, newState: Int) {
             if (newState == BluetoothProfile.STATE_CONNECTED) {
                 _connectionState.value = ConnectionState.CONNECTED
-                clearRetryQueue()
+                retryCount = 0
+                gatt.requestConnectionPriority(BluetoothGatt.CONNECTION_PRIORITY_BALANCED)
                 gatt.discoverServices()
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
                 _connectionState.value = ConnectionState.DISCONNECTED
@@ -156,11 +179,21 @@ class BleManager private constructor(private val context: Context) {
         override fun onServicesDiscovered(gatt: BluetoothGatt, status: Int) {
             val config = currentConfig ?: return
             val service = toUuid(config.serviceUuid)?.let { gatt.getService(it) }
-            val char = toUuid(config.statusCharUuid)?.let { service?.getCharacteristic(it) }
             
-            if (char != null) {
-                gatt.setCharacteristicNotification(char, true)
-                val descriptor = char.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"))
+            // Subscribe to Status updates
+            val statusChar = toUuid(config.statusCharUuid)?.let { service?.getCharacteristic(it) }
+            if (statusChar != null) {
+                gatt.setCharacteristicNotification(statusChar, true)
+                val descriptor = statusChar.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"))
+                descriptor.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
+                gatt.writeDescriptor(descriptor)
+            }
+
+            // Subscribe to Learn Code updates
+            val learnReturnChar = toUuid(config.returnLearnCodeCharUuid)?.let { service?.getCharacteristic(it) }
+            if (learnReturnChar != null) {
+                gatt.setCharacteristicNotification(learnReturnChar, true)
+                val descriptor = learnReturnChar.getDescriptor(UUID.fromString("00002902-0000-1000-8000-00805f9b34fb"))
                 descriptor.value = BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE
                 gatt.writeDescriptor(descriptor)
             }
@@ -178,16 +211,44 @@ class BleManager private constructor(private val context: Context) {
     }
 
     private fun handleCharacteristicValue(characteristic: BluetoothGattCharacteristic) {
-        if (characteristic.uuid == toUuid(currentConfig?.statusCharUuid)) {
+        val config = currentConfig ?: return
+        if (characteristic.uuid == toUuid(config.statusCharUuid)) {
             val value = characteristic.value
             if (value != null && value.size >= 4) {
                 val buffer = ByteBuffer.wrap(value).order(ByteOrder.LITTLE_ENDIAN)
                 _counterValue.value = buffer.int
             }
+        } else if (characteristic.uuid == toUuid(config.returnLearnCodeCharUuid)) {
+            val value = characteristic.value
+            if (value != null && value.isNotEmpty()) {
+                val buffer = ByteBuffer.wrap(value).order(ByteOrder.BIG_ENDIAN)
+                val codes = mutableListOf<Long>() // Use Long to handle unsigned if needed, or Int
+                while (buffer.remaining() >= 4) {
+                    codes.add(buffer.int.toLong())
+                }
+                _learnedCode.value = codes.joinToString(", ")
+            }
+        }
+    }
+
+    fun readLearnedCode() {
+        val config = currentConfig ?: return
+        val gatt = gatt ?: return
+        val service = toUuid(config.serviceUuid)?.let { gatt.getService(it) }
+        val char = toUuid(config.returnLearnCodeCharUuid)?.let { service?.getCharacteristic(it) }
+        
+        if (char != null) {
+            gatt.readCharacteristic(char)
         }
     }
 
     fun openDoor() {
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - lastWriteTime < THROTTLE_MS) {
+            Log.d("BleManager", "Throttling open command")
+            return
+        }
+        
         val config = currentConfig ?: return
         val gatt = gatt ?: return
         val service = toUuid(config.serviceUuid)?.let { gatt.getService(it) }
@@ -195,6 +256,7 @@ class BleManager private constructor(private val context: Context) {
         val statusChar = toUuid(config.statusCharUuid)?.let { service?.getCharacteristic(it) }
         
         if (openChar != null) {
+            lastWriteTime = currentTime
             openChar.value = byteArrayOf(0x01)
             gatt.writeCharacteristic(openChar)
             
@@ -213,5 +275,42 @@ class BleManager private constructor(private val context: Context) {
         gatt?.close()
         gatt = null
         _connectionState.value = ConnectionState.DISCONNECTED
+    }
+
+    fun startLearning() {
+        if (_isLearning.value) return
+        
+        _learnedCode.value = null // Clear previous code
+        writeCommand(currentConfig?.learnCodeStartCharUuid)
+        _isLearning.value = true
+        
+        // Spec: Automatically stop after 10 seconds
+        scope.launch {
+            delay(10000)
+            stopLearning()
+        }
+    }
+
+    fun stopLearning() {
+        writeCommand(currentConfig?.learnCodeStopCharUuid)
+        _isLearning.value = false
+        
+        // Refresh learned code after stopping
+        scope.launch {
+            delay(500)
+            readLearnedCode()
+        }
+    }
+
+    private fun writeCommand(charUuid: String?) {
+        val config = currentConfig ?: return
+        val gatt = gatt ?: return
+        val service = toUuid(config.serviceUuid)?.let { gatt.getService(it) }
+        val char = toUuid(charUuid)?.let { service?.getCharacteristic(it) }
+        
+        if (char != null) {
+            char.value = byteArrayOf(0x01)
+            gatt.writeCharacteristic(char)
+        }
     }
 }
