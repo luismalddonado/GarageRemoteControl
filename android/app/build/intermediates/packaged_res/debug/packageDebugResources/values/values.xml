@@ -14,12 +14,13 @@
     <string name="code_learning_title">Aprendizaje de Códigos</string>
     <string name="current_code_label">Código actual: %s</string>
     <string name="device_name">Nombre del dispositivo</string>
+    <string name="grant_permissions_on_phone">Por favor, abre la aplicación en tu teléfono y otorga los permisos necesarios.</string>
     <string name="learn_return_uuid">UUID retorno código</string>
     <string name="learn_start_uuid">UUID inicio aprendizaje</string>
     <string name="learn_stop_uuid">UUID fin aprendizaje</string>
     <string name="main_title">Controlador de Garaje</string>
     <string name="open_char_uuid">UUID caract. abrir</string>
-    <string name="open_door">Abrir Puerta</string>
+    <string name="open_door">Abrir</string>
     <string name="operations_count">Operaciones pendientes: %d</string>
     <string name="reset_defaults">Restablecer valores</string>
     <string name="save_settings">Guardar cambios</string>

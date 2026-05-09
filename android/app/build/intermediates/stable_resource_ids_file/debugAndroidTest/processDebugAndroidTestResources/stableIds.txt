@@ -1,2 +1,2 @@
-com.example.garagedoor.test:style/WhiteBackgroundTheme = 0x7f010001
-com.example.garagedoor.test:style/WhiteBackgroundDialogTheme = 0x7f010000
+com.luismalddonado.garagedoor.test:style/WhiteBackgroundTheme = 0x7f010001
+com.luismalddonado.garagedoor.test:style/WhiteBackgroundDialogTheme = 0x7f010000

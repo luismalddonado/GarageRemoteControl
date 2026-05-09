@@ -1,26 +1,26 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.garagedoor.test" >
+3    package="com.luismalddonado.garagedoor.test" >
 4
 5    <uses-sdk
-5-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:5:5-74
+5-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:5:15-41
+6-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:5:15-41
 7        android:targetSdkVersion="34" />
-7-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:5:42-71
+7-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:5:42-71
 8
 9    <instrumentation
-9-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:7:5-11:72
+9-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:7:5-11:79
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:7:22-76
+10-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:7:22-76
 11        android:functionalTest="false"
-11-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:10:22-52
+11-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:10:22-52
 12        android:handleProfiling="false"
-12-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:9:22-53
-13        android:label="Tests for com.example.garagedoor"
-13-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:11:22-70
-14        android:targetPackage="com.example.garagedoor" />
-14-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest8755825978460375447.xml:8:22-68
+12-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:9:22-53
+13        android:label="Tests for com.luismalddonado.garagedoor"
+13-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:11:22-77
+14        android:targetPackage="com.luismalddonado.garagedoor" />
+14-->C:\tmp\openspec\GarageDoor\android\app\build\intermediates\tmp\manifest\androidTest\debug\tempFile1ProcessTestManifest7713852798725205563.xml:8:22-75
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.5.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\16663446a87f6a74e07b4936e49fa05d\workspace\transformed\jetified-core-1.5.0\AndroidManifest.xml:24:5-72

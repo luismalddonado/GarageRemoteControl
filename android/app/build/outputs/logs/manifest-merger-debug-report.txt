@@ -51,7 +51,7 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\w200012\.gradle\
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\9211b5231eb2a892e44ad9ae904115bb\workspace\transformed\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\5b14589c0f3b5172457c461df82b6775\workspace\transformed\print-1.0.0\AndroidManifest.xml:17:1-22:12
 	package
-		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:3:5-37
+		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:3:5-44
 		INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml
@@ -144,7 +144,7 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\w200012\.gradle\ca
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:19:9-35
 	android:theme
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:24:9-48
-activity#com.example.garagedoor.ui.MainActivity
+activity#com.luismalddonado.garagedoor.ui.MainActivity
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:26:9-33:20
 	android:exported
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:28:13-36
@@ -160,7 +160,7 @@ category#android.intent.category.LAUNCHER
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:31:17-77
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:31:27-74
-activity#com.example.garagedoor.ui.ConfigurationActivity
+activity#com.luismalddonado.garagedoor.ui.ConfigurationActivity
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:35:9-38:61
 	android:parentActivityName
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:38:13-58
@@ -168,7 +168,7 @@ ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:3
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:36:13-53
-service#com.example.garagedoor.car.GarageDoorCarAppService
+service#com.luismalddonado.garagedoor.car.GarageDoorCarAppService
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:42:9-50:19
 	android:label
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:45:13-45
@@ -204,7 +204,7 @@ ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:6
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:62:13-33
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:61:13-75
-service#com.example.garagedoor.ble.BleService
+service#com.luismalddonado.garagedoor.ble.BleService
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:65:9-68:40
 	android:exported
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:68:13-37
@@ -212,7 +212,7 @@ ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:6
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:67:13-60
 	android:name
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:66:13-43
-receiver#com.example.garagedoor.ble.BootReceiver
+receiver#com.luismalddonado.garagedoor.ble.BootReceiver
 ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:70:9-77:20
 	android:enabled
 		ADDED from C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:72:13-35
@@ -378,7 +378,7 @@ ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\tra
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
-permission#com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
@@ -388,7 +388,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
-uses-permission#com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:22-94

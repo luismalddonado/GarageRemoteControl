@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.garagedoor.app-mergeDebugResources-33:/values-v22/values-v22.xml",
+            "outputFile": "com.luismalddonado.garagedoor.app-mergeDebugResources-33:/values-v22/values-v22.xml",
             "map": [
                 {
                     "source": "C:\\Users\\w200012\\.gradle\\caches\\9.3.1\\transforms\\6d6bc818ec5d4e103bb249925c115cce\\workspace\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",

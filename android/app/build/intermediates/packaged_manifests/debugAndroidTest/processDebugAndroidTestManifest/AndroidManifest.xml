@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.garagedoor.test" >
+    package="com.luismalddonado.garagedoor.test" >
 
     <uses-sdk
         android:minSdkVersion="21"
@@ -10,8 +10,8 @@
         android:name="androidx.test.runner.AndroidJUnitRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.example.garagedoor"
-        android:targetPackage="com.example.garagedoor" />
+        android:label="Tests for com.luismalddonado.garagedoor"
+        android:targetPackage="com.luismalddonado.garagedoor" />
 
     <uses-permission android:name="android.permission.REORDER_TASKS" />
 

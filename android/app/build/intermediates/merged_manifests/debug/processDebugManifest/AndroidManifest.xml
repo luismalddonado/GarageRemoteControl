@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.garagedoor"
+    package="com.luismalddonado.garagedoor"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -32,10 +32,10 @@
     </queries>
 
     <permission
-        android:name="com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -49,7 +49,7 @@
         android:testOnly="true"
         android:theme="@style/Theme.GarageDoor" >
         <activity
-            android:name="com.example.garagedoor.ui.MainActivity"
+            android:name="com.luismalddonado.garagedoor.ui.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,13 +58,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.garagedoor.ui.ConfigurationActivity"
+            android:name="com.luismalddonado.garagedoor.ui.ConfigurationActivity"
             android:label="Settings"
-            android:parentActivityName="com.example.garagedoor.ui.MainActivity" />
+            android:parentActivityName="com.luismalddonado.garagedoor.ui.MainActivity" />
 
         <!-- Android Auto Service -->
         <service
-            android:name="com.example.garagedoor.car.GarageDoorCarAppService"
+            android:name="com.luismalddonado.garagedoor.car.GarageDoorCarAppService"
             android:exported="true"
             android:label="@string/app_name" >
             <intent-filter>
@@ -86,12 +86,12 @@
 
         <!-- BLE Service -->
         <service
-            android:name="com.example.garagedoor.ble.BleService"
+            android:name="com.luismalddonado.garagedoor.ble.BleService"
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
 
         <receiver
-            android:name="com.example.garagedoor.ble.BootReceiver"
+            android:name="com.luismalddonado.garagedoor.ble.BootReceiver"
             android:enabled="true"
             android:exported="true" >
             <intent-filter>
@@ -110,7 +110,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.example.garagedoor.androidx-startup"
+            android:authorities="com.luismalddonado.garagedoor.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.emoji2.text.EmojiCompatInitializer"

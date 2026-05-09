@@ -31,6 +31,7 @@ string btn_stop_learning
 string code_learning_title
 string current_code_label
 string device_name
+string grant_permissions_on_phone
 string learn_return_uuid
 string learn_start_uuid
 string learn_stop_uuid

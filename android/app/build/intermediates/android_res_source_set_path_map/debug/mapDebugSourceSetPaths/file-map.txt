@@ -1,8 +1,8 @@
-com.example.garagedoor.app-pngs-0 C:\tmp\openspec\GarageDoor\android\app\build\generated\res\pngs\debug
-com.example.garagedoor.app-resValues-1 C:\tmp\openspec\GarageDoor\android\app\build\generated\res\resValues\debug
-com.example.garagedoor.app-updated_navigation_xml-2 C:\tmp\openspec\GarageDoor\android\app\build\generated\updated_navigation_xml\debug
-com.example.garagedoor.app-packageDebugResources-3 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.garagedoor.app-packageDebugResources-4 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.garagedoor.app-debug-5 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.garagedoor.app-debug-6 C:\tmp\openspec\GarageDoor\android\app\src\debug\res
-com.example.garagedoor.app-main-7 C:\tmp\openspec\GarageDoor\android\app\src\main\res
+com.luismalddonado.garagedoor.app-pngs-0 C:\tmp\openspec\GarageDoor\android\app\build\generated\res\pngs\debug
+com.luismalddonado.garagedoor.app-resValues-1 C:\tmp\openspec\GarageDoor\android\app\build\generated\res\resValues\debug
+com.luismalddonado.garagedoor.app-updated_navigation_xml-2 C:\tmp\openspec\GarageDoor\android\app\build\generated\updated_navigation_xml\debug
+com.luismalddonado.garagedoor.app-packageDebugResources-3 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.luismalddonado.garagedoor.app-packageDebugResources-4 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.luismalddonado.garagedoor.app-debug-5 C:\tmp\openspec\GarageDoor\android\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.luismalddonado.garagedoor.app-debug-6 C:\tmp\openspec\GarageDoor\android\app\src\debug\res
+com.luismalddonado.garagedoor.app-main-7 C:\tmp\openspec\GarageDoor\android\app\src\main\res

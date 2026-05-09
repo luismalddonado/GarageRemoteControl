@@ -11,7 +11,7 @@ The Android application consists of two main activities: the `MainActivity` for 
     - Value of the `repeat_counter_read` characteristic (e.g., "Pending operations: 124").
     - When the "Open Door" button is pressed, the pending operations count is refreshed (requests a read from the BLE device).
 - **Action Buttons**:
-    - Large "Open Door" button (triggers write command).
+    - Large "Open" button (triggers write command).
     - "Reconnect" button, close to the status indicator, only visible when disconnected
     - "Reconnect" button to do move around while the status indicator is scanning or connecting
     (triggers manual scan/connection attempt).

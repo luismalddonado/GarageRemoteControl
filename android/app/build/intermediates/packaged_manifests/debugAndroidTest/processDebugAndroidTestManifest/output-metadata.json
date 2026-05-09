@@ -4,7 +4,7 @@
     "type": "PACKAGED_MANIFESTS",
     "kind": "Directory"
   },
-  "applicationId": "com.example.garagedoor.test",
+  "applicationId": "com.luismalddonado.garagedoor.test",
   "variantName": "debugAndroidTest",
   "elements": [
     {

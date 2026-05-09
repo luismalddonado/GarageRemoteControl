@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.garagedoor"
+3    package="com.luismalddonado.garagedoor"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -64,12 +64,12 @@
 33
 34    <permission
 34-->[androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
-35        android:name="com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35        android:name="com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 35-->[androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
 36        android:protectionLevel="signature" />
 36-->[androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 37
-38    <uses-permission android:name="com.example.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38    <uses-permission android:name="com.luismalddonado.garagedoor.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 38-->[androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
 38-->[androidx.core:core:1.12.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\c21dd50e8387bc5dde8e6288d2d0eac9\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 39
@@ -95,7 +95,7 @@
 50-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:24:9-48
 51        <activity
 51-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:26:9-33:20
-52            android:name="com.example.garagedoor.ui.MainActivity"
+52            android:name="com.luismalddonado.garagedoor.ui.MainActivity"
 52-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:27:13-44
 53            android:exported="true" >
 53-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:28:13-36
@@ -112,17 +112,17 @@
 59        </activity>
 60        <activity
 60-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:35:9-38:61
-61            android:name="com.example.garagedoor.ui.ConfigurationActivity"
+61            android:name="com.luismalddonado.garagedoor.ui.ConfigurationActivity"
 61-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:36:13-53
 62            android:label="Settings"
 62-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:37:13-37
-63            android:parentActivityName="com.example.garagedoor.ui.MainActivity" />
+63            android:parentActivityName="com.luismalddonado.garagedoor.ui.MainActivity" />
 63-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:38:13-58
 64
 65        <!-- Android Auto Service -->
 66        <service
 66-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:42:9-50:19
-67            android:name="com.example.garagedoor.car.GarageDoorCarAppService"
+67            android:name="com.luismalddonado.garagedoor.car.GarageDoorCarAppService"
 67-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:43:13-56
 68            android:exported="true"
 68-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:44:13-36
@@ -162,7 +162,7 @@
 87        <!-- BLE Service -->
 88        <service
 88-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:65:9-68:40
-89            android:name="com.example.garagedoor.ble.BleService"
+89            android:name="com.luismalddonado.garagedoor.ble.BleService"
 89-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:66:13-43
 90            android:exported="false"
 90-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:68:13-37
@@ -171,7 +171,7 @@
 92
 93        <receiver
 93-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:70:9-77:20
-94            android:name="com.example.garagedoor.ble.BootReceiver"
+94            android:name="com.luismalddonado.garagedoor.ble.BootReceiver"
 94-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:71:13-45
 95            android:enabled="true"
 95-->C:\tmp\openspec\GarageDoor\android\app\src\main\AndroidManifest.xml:72:13-35
@@ -205,7 +205,7 @@
 111-->[androidx.emoji2:emoji2:1.2.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\49a4c8d56ae961a3b14b4f7e606d742d\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
 112            android:name="androidx.startup.InitializationProvider"
 112-->[androidx.emoji2:emoji2:1.2.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\49a4c8d56ae961a3b14b4f7e606d742d\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-113            android:authorities="com.example.garagedoor.androidx-startup"
+113            android:authorities="com.luismalddonado.garagedoor.androidx-startup"
 113-->[androidx.emoji2:emoji2:1.2.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\49a4c8d56ae961a3b14b4f7e606d742d\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
 114            android:exported="false" >
 114-->[androidx.emoji2:emoji2:1.2.0] C:\Users\w200012\.gradle\caches\9.3.1\transforms\49a4c8d56ae961a3b14b4f7e606d742d\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37

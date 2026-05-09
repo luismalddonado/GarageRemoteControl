@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.garagedoor'
+    namespace 'com.luismalddonado.garagedoor'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.example.garagedoor"
+        applicationId "com.luismalddonado.garagedoor"
         minSdk 21
         targetSdk 34
         versionCode 1
@@ -17,9 +17,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file('release.keystore')
+            storePassword 'android'
+            keyAlias 'release'
+            keyPassword 'android'
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

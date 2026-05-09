@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Puerta Garaje</string>
-    <string name="open_door">Abrir Puerta</string>
+    <string name="open_door">Abrir</string>
     <string name="status_scanning">Escaneando...</string>
     <string name="status_connecting">Conectando...</string>
     <string name="status_connected">Conectado</string>
@@ -24,4 +24,5 @@
     <string name="btn_stop_learning">Detener aprendizaje</string>
     <string name="current_code_label">Código actual: %s</string>
     <string name="code_learning_title">Aprendizaje de Códigos</string>
+    <string name="grant_permissions_on_phone">Por favor, abre la aplicación en tu teléfono y otorga los permisos necesarios.</string>
 </resources>
