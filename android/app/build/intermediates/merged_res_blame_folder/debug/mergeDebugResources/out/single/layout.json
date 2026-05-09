@@ -1,14 +1,10 @@
 [
     {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-mergeDebugResources-34:\\layout\\activity_main.xml",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\layout\\activity_main.xml"
-    },
-    {
-        "merged": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-mergeDebugResources-34:\\layout\\activity_configuration.xml",
-        "source": "C:\\Users\\w200012\\.gradle\\daemon\\9.3.1\\com.example.garagedoor.app-main-37:\\layout\\activity_configuration.xml"
-    },
-    {
         "merged": "com.example.garagedoor.app-mergeDebugResources-34:/layout/activity_configuration.xml",
         "source": "com.example.garagedoor.app-main-37:/layout/activity_configuration.xml"
+    },
+    {
+        "merged": "com.example.garagedoor.app-mergeDebugResources-34:/layout/activity_main.xml",
+        "source": "com.example.garagedoor.app-main-37:/layout/activity_main.xml"
     }
 ]
